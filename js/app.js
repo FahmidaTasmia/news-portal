@@ -59,6 +59,7 @@ const loadSpinner = isLoading =>{
       <div class="card-body">
         <h5 class="card-title">${id.title}</h5>
         <p class="card-text cards">${id.details}</p>
+        
         <div class="d-flex justify-content-around align-items-center">
        <div> <img class="img-fluid img" src="${id.author.img}" alt="">  ${id.author.name ? id.author.name : "No found name"}</div>
        <div class=""> 
