@@ -18,6 +18,15 @@
     color: red;
   }
 
+  .cards{
+    overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 4; 
+   -webkit-box-orient: vertical; 
+    }
+    .img{
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+    }
 
   @media screen and (max-width:600px) {
     .user{
@@ -25,7 +34,7 @@
         flex-direction:column ;
         justify-content: center;
         align-items: center;
-        margin-top: 8px;
+        margin-top: 6px;
         border:0px ;
     }
   }
