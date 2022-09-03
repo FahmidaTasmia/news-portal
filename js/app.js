@@ -67,7 +67,7 @@ const loadSpinner = isLoading =>{
       <p> <i class="fa-solid fa-eye"></i> ${id.total_view ? id.total_view : 'Not Found'}</p>
        </div>
        
-       <a onclick="detailModal('${id._id}')" data-bs-toggle="modal" data-bs-target="#exampleModal" class="text-dark fs-6"> <button type="button" class="btn btn-danger btn-sm">Show More</button></a>
+       <a onclick="loadModal('${id._id}')" data-bs-toggle="modal" data-bs-target="#exampleModal" class="text-dark fs-6"> <button type="button" class="btn btn-danger btn-sm">Show More</button></a>
         </div>
     
       </div>
@@ -80,3 +80,30 @@ const loadSpinner = isLoading =>{
   })
   loadSpinner(false)
  }
+
+
+ const loadModal = news_id =>{
+  const url = `https://openapi.programming-hero.com/api/news/${news_id}`
+  fetch(url)
+  .then(res => res.json())
+  .then(data => displayModal(data.data))
+}
+const displayModal = data =>{
+ 
+  data.forEach(news =>{
+    console.log(news)
+    const modalTitle = document.getElementById('exampleModalLabel')
+    modalTitle.innerText = news.title;
+    const modalBody = document.getElementById('modal-body')
+    modalBody.classList.add('modal-user')
+    modalBody.innerHTML = ` 
+    <img class="img" src="${news.author.img}" alt="">
+    <P> Name: ${news.author.name ? news.author.name : 'No found name'} </br> published date: ${news.author.published_date}
+    <hr>
+    <p><i class="fa-solid fa-eye"></i> ${news.total_view ? news.total_view : 'No data available'} </p>
+    <p> Title: ${news.title}</p>
+    <img class="img-fluid" src="${news.thumbnail_url}" alt="">
+    `
+  })  
+}
+
