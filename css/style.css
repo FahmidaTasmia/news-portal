@@ -1,0 +1,31 @@
+.navbar-nav a {
+    font-weight: 600;
+    color: black !important;
+  }
+
+  .navbar-nav a:hover {
+    font-weight: 700;
+    color: red !important;
+  }
+  .user button {
+    font-weight: 500;
+    margin: 10px;
+    padding: 0px 30px;
+    
+  }
+  .user button:hover{
+    font-weight: 600;
+    color: red;
+  }
+
+
+  @media screen and (max-width:600px) {
+    .user{
+        display: flex;
+        flex-direction:column ;
+        justify-content: center;
+        align-items: center;
+        margin-top: 8px;
+        border:0px ;
+    }
+  }
